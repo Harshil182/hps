@@ -1,0 +1,6 @@
+{
+  "name": "Happy Birthday, Harshi",
+  "description": "A romantic, elegant, and personalized digital love letter and interactive keepsake crafted specially for Harshita.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Love Letter to Harshita</title>
+  <meta name="description" content="A romantic, elegant, and personalized digital love letter and interactive keepsake crafted specially for Harshita." />
+  <meta property="og:title" content="A Love Letter to Harshita" />
+  <meta property="og:description" content="A romantic, elegant, and personalized digital love letter and interactive keepsake crafted specially for Harshita." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#fff5f7" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <!-- Ambient Rose Petal Background Canvas -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- ======================================================================
+       Opening Ceremony Envelope Overlay
+       ====================================================================== -->
+  <div id="opening-overlay">
+    <div class="envelope-wrapper">
+      <h2 class="envelope-title">For My Dearest Sweer Heart 💝</h2>
+      <p class="envelope-subtitle">A special delivery from my heart to yours...</p>
+      
+      <div class="envelope" id="opening-envelope" title="Click the wax seal to open your letter">
+        <div class="envelope-pocket"></div>
+        <div class="envelope-flap"></div>
+        <div class="wax-seal">
+          <span class="wax-seal-initial">H</span>
+        </div>
+      </div>
+
+      <div class="envelope-prompt">
+        <span>✨ Tap the wax seal to unfold</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       Sticky Floating Navigation Bar
+       ====================================================================== -->
+  <header>
+    <nav class="top-nav" aria-label="Main navigation">
+      <a href="#hero" class="nav-brand">
+        <span>For Harshita</span>
+        <span class="nav-brand-heart">♡</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#letter" class="nav-link">The Letter</a></li>
+        <li><a href="#reasons" class="nav-link">Why You</a></li>
+        <li><a href="#journey" class="nav-link">Our Journey</a></li>
+        <li><a href="#open-when" class="nav-link">Open When...</a></li>
+        <li><a href="#polaroids" class="nav-link">Moments</a></li>
+        <li><a href="#constellation" class="nav-link">Our Sky</a></li>
+        <li><a href="#promises" class="nav-link">Promises</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Ambient Music Toggle with Equalizer -->
+        <button id="music-toggle-btn" class="btn-icon" aria-label="Toggle romantic ambient music" title="Play ambient music">
+          <div class="sound-waves">
+            <span class="sound-wave-bar"></span>
+            <span class="sound-wave-bar"></span>
+            <span class="sound-wave-bar"></span>
+            <span class="sound-wave-bar"></span>
+          </div>
+        </button>
+
+        <!-- Theme Mode Toggle -->
+        <button id="theme-toggle-btn" class="btn-icon" aria-label="Toggle romantic lighting mode" title="Switch to Candlelight Twilight">
+          🌙
+        </button>
+
+        <!-- Personalize / Customize -->
+        <button id="customize-btn" class="btn-icon" aria-label="Personalize names and dates" title="Personalize details">
+          ✎
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-nav-toggle" class="btn-icon mobile-nav-toggle" aria-label="Open navigation menu">
+          ☰
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ======================================================================
+       Hero Section
+       ====================================================================== -->
+  <main>
+    <section id="hero" class="hero-section">
+      <div class="container">
+        <div class="hero-tag">
+          <span class="hero-tag-dot"></span>
+          <span>A Keepsake Written Only For You</span>
+        </div>
+
+        <h1 class="hero-title">
+          To My Dearest
+          <span class="hero-title-name dyn-her-name">Harshita</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          "In a world of billions of people, my heart found its home in you.
+          Every whisper of wind and every turn of the stars brought me here."
+        </p>
+
+        <!-- Love Counter Box -->
+        <div class="love-counter-box" id="love-counter">
+          <div class="counter-header">
+            <span class="counter-label">
+              <span>🌸</span>
+              <span>Cherishing every single second of us</span>
+            </span>
+            <button class="counter-edit-btn" id="edit-date-btn">Customize Date</button>
+          </div>
+
+          <div class="counter-grid">
+            <div class="counter-item">
+              <div class="counter-num" id="counter-days">0</div>
+              <div class="counter-unit">Days</div>
+            </div>
+            <div class="counter-item">
+              <div class="counter-num" id="counter-hours">00</div>
+              <div class="counter-unit">Hours</div>
+            </div>
+            <div class="counter-item">
+              <div class="counter-num" id="counter-minutes">00</div>
+              <div class="counter-unit">Minutes</div>
+            </div>
+            <div class="counter-item">
+              <div class="counter-num" id="counter-seconds">00</div>
+              <div class="counter-unit">Seconds</div>
+            </div>
+          </div>
+
+          <p class="counter-footnote">...and counting towards forever and a day.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         Section 1: The Handwritten Love Letter
+         ==================================================================== -->
+    <section id="letter" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pill">Chapter I</span>
+          <h2 class="section-title">A Letter From My Heart</h2>
+          <p class="section-description">Words that have lived quietly inside my soul, waiting for you.</p>
+        </div>
+
+        <div class="parchment-letter-wrapper">
+          <article class="parchment-letter">
+            <!-- Decorative Corners -->
+            <div class="parchment-corner corner-tl"></div>
+            <div class="parchment-corner corner-tr"></div>
+            <div class="parchment-corner corner-bl"></div>
+            <div class="parchment-corner corner-br"></div>
+
+            <div class="letter-date-badge">To the love of my life, always</div>
+
+            <h3 class="letter-salutation">My Dearest <span class="dyn-her-name">Harshi</span>,</h3>
+
+            <div class="letter-body">
+              <p>
+                If anyone had told me before I met you that a single human smile could illuminate the darkest days, 
+                I might never have fully believed them. But then you walked into my world, effortless and radiant, 
+                and suddenly everything before you felt like a prelude to the true beginning of my life.
+              </p>
+
+              <p>
+                There is a tender poetry in the way you exist, Harshita. The thoughtful tilt of your head when you listen, 
+                the soft warmth that spills over whenever you laugh wholeheartedly, and the quiet resilience you carry within you. 
+                You bring peace into rooms that were once chaotic, and warmth into corners I didn't realize were cold.
+              </p>
+
+              <div class="highlight-quote">
+                "Loving you is not something I do; it has become the very melody of who I am."
+              </div>
+
+              <p>
+                I cherish the grand moments, but I adore the quiet, unscripted ones even more: our sleepy morning murmurs, 
+                our silly inside jokes that make zero sense to anyone else, the sweet safety of resting my head near yours, 
+                and that unmistakable feeling of being completely and undeniably home.
+              </p>
+
+              <p>
+                Whatever storms may wander through our future, I want you to remember that you will never have to face them alone. 
+                My hand will always reach for yours; my arms will always be your sanctuary; and my love will remain your 
+                steadfast anchor through every sunrise and midnight yet to come.
+              </p>
+            </div>
+
+            <div class="letter-closing">
+              <p class="letter-closing-text">Eternally, unconditionally, and proudly,</p>
+              <p class="letter-signature dyn-partner-name">Yours Always</p>
+            </div>
+
+            <div class="letter-interactive-bar">
+              <button class="btn-romantic" onclick="AudioEngine.playChime(); petalEngine && petalEngine.burst(window.innerWidth/2, window.innerHeight/2, 30);">
+                <span>Send a Kiss to Harshita 💋</span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         Section 2: Little Reasons Why I Love You (Interactive Love Jar)
+         ==================================================================== -->
+    <section id="reasons" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pill">Chapter II</span>
+          <h2 class="section-title">Reasons Why I Love You</h2>
+          <p class="section-description">A jar filled with little origami notes, each holding a piece of my heart.</p>
+        </div>
+
+        <div class="reasons-container">
+          <!-- View Switcher -->
+          <div class="reasons-tabs">
+            <button id="tab-jar-view" class="tab-btn active">Interactive Jar</button>
+            <button id="tab-grid-view" class="tab-btn">Browse All Cards</button>
+          </div>
+
+          <!-- Glass Jar Interactive Display -->
+          <div class="jar-display-wrapper" id="jar-display-wrapper">
+            <div class="glass-jar" id="love-jar" title="Tap the jar to draw a note!">
+              <div class="jar-lid"></div>
+              <div class="jar-ribbon"></div>
+              <div class="jar-label-tag">Harshita's Jar of Love</div>
+              
+              <div class="jar-hearts-pile">
+                <span class="jar-heart-particle">💌</span>
+                <span class="jar-heart-particle">💖</span>
+                <span class="jar-heart-particle">🌸</span>
+                <span class="jar-heart-particle">✨</span>
+                <span class="jar-heart-particle">💕</span>
+                <span class="jar-heart-particle">🌹</span>
+                <span class="jar-heart-particle">💞</span>
+              </div>
+            </div>
+
+            <div class="jar-controls">
+              <button id="draw-reason-btn" class="btn-romantic">
+                <span>Draw a Note from the Jar 💌</span>
+              </button>
+              <span class="jar-hint">(Tap the jar or button to pull out a romantic reason)</span>
+            </div>
+
+            <!-- The Unfolded Note Display -->
+            <div class="drawn-note-card" id="drawn-note-display">
+              <span class="drawn-note-badge" id="drawn-reason-num">Reason #1</span>
+              <p class="drawn-note-text" id="drawn-reason-text">
+                "The way your eyes crinkle with pure warmth whenever you genuinely laugh."
+              </p>
+              <div class="drawn-note-author">For Harshita ♡</div>
+            </div>
+          </div>
+
+          <!-- Grid View (Initially Hidden) -->
+          <div class="reasons-grid-view" id="reasons-grid-view" style="display: none;">
+            <div id="reasons-grid-list" class="reasons-grid-view" style="margin-top: 0;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         Section 3: Our Beautiful Journey (Timeline)
+         ==================================================================== -->
+    <section id="journey" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pill">Chapter III</span>
+          <h2 class="section-title">Our Beautiful Story</h2>
+          <p class="section-description">A collection of milestones that turned moments into a lifetime of memories.</p>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-line"></div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">The Beginning</span>
+              <h3 class="timeline-title">When Our Paths Crossed</h3>
+              <p class="timeline-desc">
+                The unforgettable day destiny smiled on me. A simple conversation that effortlessly unfolded 
+                into hours of shared stories, sparks of laughter, and the spark that changed everything.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">Late Night Talks</span>
+              <h3 class="timeline-title">Hours Felt Like Seconds</h3>
+              <p class="timeline-desc">
+                Those nights when we stayed awake whispering our deepest thoughts, childhood memories, 
+                and silly dreams until 3 AM, realizing we never wanted the night to end.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">The Confession</span>
+              <h3 class="timeline-title">When My Heart Said It First</h3>
+              <p class="timeline-desc">
+                The moment words could no longer contain what was already overflowing. 
+                Saying "I love you" to you wasn't a choice; it was the truest confession of my life.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">Adventures & Cozy Evenings</span>
+              <h3 class="timeline-title">Finding Magic In The Everyday</h3>
+              <p class="timeline-desc">
+                From wandering through quiet streets and sharing sweet treats, to cozy evenings wrapped under 
+                the blanket doing nothing at all — every ordinary place became extraordinary with you.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">Through Every Season</span>
+              <h3 class="timeline-title">Growing Stronger Together</h3>
+              <p class="timeline-desc">
+                Learning each other's moods, comforting each other through tough days, and realizing 
+                that loving you is the sweetest, easiest anchor in this unpredictable world.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">Forever & Beyond</span>
+              <h3 class="timeline-title">The Best Is Yet To Come</h3>
+              <p class="timeline-desc">
+                Every chapter we have written is precious, but my favorite chapter is always tomorrow, 
+                knowing that I get to spend it loving you even more.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         Section 4: "Open When..." Letters
+         ==================================================================== -->
+    <section id="open-when" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pill">Chapter IV</span>
+          <h2 class="section-title">"Open When..." Letters</h2>
+          <p class="section-description">Whenever life feels heavy or you just need a reminder, open the letter you need.</p>
+        </div>
+
+        <div class="open-when-grid">
+          <!-- Card 1 -->
+          <div class="letter-envelope-card" data-open-letter="badDay">
+            <div class="envelope-mini-icon">☁️</div>
+            <div class="open-when-tag">Open When...</div>
+            <h3 class="open-when-title">You've had a rough or exhausting day</h3>
+            <div class="open-when-cta">Open Letter ➔</div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="letter-envelope-card" data-open-letter="missMe">
+            <div class="envelope-mini-icon">🫂</div>
+            <div class="open-when-tag">Open When...</div>
+            <h3 class="open-when-title">You miss me and need a tight warm hug</h3>
+            <div class="open-when-cta">Open Letter ➔</div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="letter-envelope-card" data-open-letter="cantSleep">
+            <div class="envelope-mini-icon">🌙</div>
+            <div class="open-when-tag">Open When...</div>
+            <h3 class="open-when-title">You can't fall asleep in the quiet night</h3>
+            <div class="open-when-cta">Open Letter ➔</div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="letter-envelope-card" data-open-letter="doubtYourself">
+            <div class="envelope-mini-icon">✨</div>
+            <div class="open-when-tag">Open When...</div>
+            <h3 class="open-when-title">You doubt yourself or feel insecure</h3>
+            <div class="open-when-cta">Open Letter ➔</div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="letter-envelope-card" data-open-letter="wantToLaugh">
+            <div class="envelope-mini-icon">🌸</div>
+            <div class="open-when-tag">Open When...</div>
+            <h3 class="open-when-title">You need an instant reason to smile & giggle</h3>
+            <div class="open-when-cta">Open Letter ➔</div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="letter-envelope-card" data-open-letter="deepLove">
+            <div class="envelope-mini-icon">💖</div>
+            <div class="open-when-tag">Open When...</div>
+            <h3 class="open-when-title">You need to know how deeply I love you</h3>
+            <div class="open-when-cta">Open Letter ➔</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         Section 5: Polaroids & Captured Moments Gallery
+         ==================================================================== -->
+    <section id="polaroids" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pill">Chapter V</span>
+          <h2 class="section-title">Moments Frozen In Time</h2>
+          <p class="section-description">Polaroids capturing the essence of our warmth, laughter, and sweet adventures.</p>
+        </div>
+
+        <div class="polaroids-grid">
+          <!-- Polaroid 1 -->
+          <div class="polaroid-card">
+            <div class="polaroid-tape"></div>
+            <div class="polaroid-img-wrapper">
+              <img class="polaroid-img" src="/gallery/sunset.jpg" alt="Lake bench memory" />
+            </div>
+            <div class="polaroid-caption">
+              <div class="polaroid-text">Lake Bench Moment</div>
+              <div class="polaroid-date">The quiet peace we never wanted to leave</div>
+            </div>
+          </div>
+
+          <!-- Polaroid 2 -->
+          <div class="polaroid-card">
+            <div class="polaroid-tape"></div>
+            <div class="polaroid-img-wrapper">
+              <img class="polaroid-img" src="/gallery/standing-together.jpg" alt="Standing together" />
+            </div>
+            <div class="polaroid-caption">
+              <div class="polaroid-text">Standing Together</div>
+              <div class="polaroid-date">Our favorite side-by-side pose</div>
+            </div>
+          </div>
+
+          <!-- Polaroid 3 -->
+          <div class="polaroid-card">
+            <div class="polaroid-tape"></div>
+            <div class="polaroid-img-wrapper">
+              <img class="polaroid-img" src="/gallery/night-selfie.jpg" alt="Night selfie" />
+            </div>
+            <div class="polaroid-caption">
+              <div class="polaroid-text">Night Selfie</div>
+              <div class="polaroid-date">The glow, the laughter, the closeness</div>
+            </div>
+          </div>
+
+          <!-- Polaroid 4 -->
+          <div class="polaroid-card" id="custom-photo-card" title="Our real photo keepsake">
+            <div class="polaroid-tape"></div>
+            <div class="polaroid-img-wrapper">
+              <img class="polaroid-img custom-slot" alt="Harshita and My Love" src="/gallery/railing-pose.jpg" />
+            </div>
+            <div class="polaroid-caption">
+              <div class="polaroid-text">Railing Pose</div>
+              <div class="polaroid-date">The way you fit perfectly in my arms</div>
+            </div>
+          </div>
+
+          <!-- Polaroid 5 -->
+          <div class="polaroid-card">
+            <div class="polaroid-tape"></div>
+            <div class="polaroid-img-wrapper">
+              <img class="polaroid-img" src="/gallery/garden-smile.jpg" alt="Garden smile" />
+            </div>
+            <div class="polaroid-caption">
+              <div class="polaroid-text">Garden Smile</div>
+              <div class="polaroid-date">Sunlight, flowers, and us</div>
+            </div>
+          </div>
+
+          <!-- Polaroid 6 -->
+          <div class="polaroid-card">
+            <div class="polaroid-tape"></div>
+            <div class="polaroid-img-wrapper">
+              <img class="polaroid-img" src="/gallery/black-sari.jpg" alt="Black sari memory" />
+            </div>
+            <div class="polaroid-caption">
+              <div class="polaroid-text">Black Saree Look</div>
+              <div class="polaroid-date">You looked like my forever dream</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Polaroid Actions -->
+        <div class="polaroids-actions">
+          <label for="photo-upload-input" class="btn-romantic-outline" style="cursor: pointer;">
+            <span>📷 Upload Our Photo Into The Gallery</span>
+            <input type="file" id="photo-upload-input" accept="image/*" style="display: none;" />
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         Section 6: Our Starry Sky & Constellation
+         ==================================================================== -->
+    <section id="constellation" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pill">Chapter VI</span>
+          <h2 class="section-title">The Starry Sky of Our Love</h2>
+          <p class="section-description">A constellation in the shape of a heart, written across the cosmos for Harshita.</p>
+        </div>
+
+        <div class="starry-sky-card">
+          <canvas id="constellation-canvas"></canvas>
+
+          <div class="starry-sky-hint">
+            Tap anywhere in the sky to reveal a romantic whisper from the cosmos...
+          </div>
+
+          <div class="star-whisper-card" id="star-whisper">
+            ✨ "You are the brightest star in my universe, Harshita."
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         Section 7: How Well Do You Know Us? (Romantic Quiz)
+         ==================================================================== -->
+    <section id="quiz" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pill">Chapter VII</span>
+          <h2 class="section-title">How Well Do You Know Us?</h2>
+          <p class="section-description">A playful little couple's quiz to bring an adorable smile to your face.</p>
+        </div>
+
+        <div class="quiz-card">
+          <div class="quiz-progress">
+            <span class="quiz-progress-text" id="quiz-progress-text">Question 1 of 4</span>
+            <span>💖</span>
+          </div>
+
+          <h3 class="quiz-question-title" id="quiz-question">Loading question...</h3>
+
+          <div class="quiz-options" id="quiz-options">
+            <!-- Options dynamically populated by script.js -->
+          </div>
+
+          <div class="quiz-feedback" id="quiz-feedback"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         Section 8: A Lifetime of Promises & Keepsake
+         ==================================================================== -->
+    <section id="promises" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pill">Chapter VIII</span>
+          <h2 class="section-title">A Lifetime of Promises</h2>
+          <p class="section-description">Vows I pledge to you today, tomorrow, and every single day after.</p>
+        </div>
+
+        <div class="promises-grid">
+          <div class="promise-item">
+            <div class="promise-icon">✦</div>
+            <div>
+              <h3 class="promise-title">To Always Listen</h3>
+              <p class="promise-text">To hear not just your words, but your quietest whispers and the feelings you leave unsaid.</p>
+            </div>
+          </div>
+
+          <div class="promise-item">
+            <div class="promise-icon">✦</div>
+            <div>
+              <h3 class="promise-title">To Stand By You In Storms</h3>
+              <p class="promise-text">To never let you walk through rain alone, holding you tightly until the sun shines again.</p>
+            </div>
+          </div>
+
+          <div class="promise-item">
+            <div class="promise-icon">✦</div>
+            <div>
+              <h3 class="promise-title">To Celebrate Your Dreams</h3>
+              <p class="promise-text">To be your loudest cheerleader, believing fiercely in your genius even when you hesitate.</p>
+            </div>
+          </div>
+
+          <div class="promise-item">
+            <div class="promise-icon">✦</div>
+            <div>
+              <h3 class="promise-title">To Never Stop Making You Laugh</h3>
+              <p class="promise-text">To crack silly jokes, make goofy faces, and keep the spark of joyful warmth alive forever.</p>
+            </div>
+          </div>
+
+          <div class="promise-item">
+            <div class="promise-icon">✦</div>
+            <div>
+              <h3 class="promise-title">To Choose You Every Single Day</h3>
+              <p class="promise-text">In every lifetime, in every mood, through every change — my choice will always be you, Harshita.</p>
+            </div>
+          </div>
+
+          <div class="promise-item">
+            <div class="promise-icon">✦</div>
+            <div>
+              <h3 class="promise-title">To Love You Unconditionally</h3>
+              <p class="promise-text">With patience, tenderness, devotion, and a heart that belongs completely to you.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Forever Acceptance Box -->
+        <div class="forever-acceptance-box">
+          <h3 class="forever-title">Will You Keep My Heart Forever?</h3>
+          <p class="forever-text">
+            Harshita, every word on this page is a piece of my soul. 
+            Tap below to accept my love and unlock your official keepsake certificate.
+          </p>
+          <button id="accept-forever-btn" class="btn-romantic" style="font-size: 1.05rem; padding: 14px 32px;">
+            <span>I Accept Your Love Forever ♡</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       Footer
+       ====================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-quote">
+        "You are my today and all of my tomorrows."
+      </p>
+      <p class="footer-copy">
+        Crafted with every ounce of love in my heart, forever dedicated to <span class="dyn-her-name">Harshita</span> 
+        <span class="footer-heart">♥</span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       MODAL 1: "Open When..." Letter Reader
+       ====================================================================== -->
+  <div id="letter-modal" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" aria-label="Close letter modal">✕</button>
+      <div class="section-pill" id="modal-letter-tag" style="margin-bottom: 12px;">Open When...</div>
+      <h3 class="section-title" id="modal-letter-title" style="font-size: 1.8rem; margin-bottom: 20px;">Letter Title</h3>
+      
+      <div id="modal-letter-body" class="letter-body" style="font-size: 1.15rem; line-height: 1.75; color: var(--text-main);">
+        <!-- Populated dynamically by script.js -->
+      </div>
+
+      <div style="margin-top: 28px; text-align: center;">
+        <button class="btn-romantic modal-close-btn">
+          <span>Close With Love ♡</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       MODAL 2: Official Keepsake Certificate
+       ====================================================================== -->
+  <div id="certificate-modal" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-card" style="max-width: 650px;">
+      <button class="modal-close-btn" aria-label="Close certificate modal">✕</button>
+
+      <div class="certificate-frame">
+        <div style="font-size: 32px; margin-bottom: 8px;">🌹</div>
+        <div class="cert-title">CERTIFICATE OF INFINITE LOVE</div>
+        <p style="font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; color: #8c5b68;">This certifies that</p>
+        
+        <div class="cert-name dyn-her-name">Harshita</div>
+        
+        <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; line-height: 1.6; max-width: 480px; margin: 0 auto 20px auto; font-style: italic;">
+          holds the key to my heart, the reason behind my happiest smiles, and the promise of my eternal love across all lifetimes.
+        </p>
+
+        <div style="display: flex; justify-content: space-around; margin-top: 24px; padding-top: 18px; border-top: 1px dashed rgba(226, 115, 138, 0.4);">
+          <div>
+            <div style="font-size: 0.8rem; text-transform: uppercase; color: #8c5b68;">Date Sealed</div>
+            <div id="cert-date-issued" style="font-weight: 600; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: #3a2228;">Today</div>
+          </div>
+          <div>
+            <div style="font-size: 0.8rem; text-transform: uppercase; color: #8c5b68;">Signed With Devotion</div>
+            <div class="dyn-partner-name" style="font-family: 'Alex Brush', cursive; font-size: 1.8rem; color: #b32a48;">Yours Always</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: center; gap: 14px; margin-top: 24px;">
+        <button id="print-cert-btn" class="btn-romantic">
+          <span>🖨️ Print / Save Keepsake Certificate</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       MODAL 3: Personalization / Customization
+       ====================================================================== -->
+  <div id="customize-modal" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" aria-label="Close customization modal">✕</button>
+      <h3 class="section-title" style="font-size: 1.7rem; margin-bottom: 8px;">Personalize This Keepsake</h3>
+      <p class="section-description" style="margin-bottom: 24px;">
+        Customize names or the start date of your love story. All changes are saved automatically.
+      </p>
+
+      <form id="customization-form">
+        <div class="form-group">
+          <label class="form-label" for="input-her-name">Her Name</label>
+          <input type="text" id="input-her-name" class="form-input" value="Harshita" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="input-partner-name">Your Name / Signature</label>
+          <input type="text" id="input-partner-name" class="form-input" value="Yours Always" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="input-start-date">Our Anniversary / Start Date</label>
+          <input type="date" id="input-start-date" class="form-input" value="2023-11-18" required />
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px;">
+          <button type="button" class="btn-romantic-outline modal-close-btn">Cancel</button>
+          <button type="submit" class="btn-romantic">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Vanilla JavaScript Logic (Runs both in Vite dev/build and directly via file:// in browser) -->
+  <script type="module" src="./script.js"></script>
+</body>
+</html>
